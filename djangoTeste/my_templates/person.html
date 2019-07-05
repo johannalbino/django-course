@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Pessoas</title>
+</head>
+<body>
+<ul>
+    {% for i in pessoas %}
+    <li>
+        <a href="{% url 'personUpdate' i.id %}"> Nome: {{i.first_name}}, Idade: {{ i.age }}, Salario : {{ i.salary }} </a>
+        <a href="{% url 'personDelete' i.id %}">Deletar</a>
+    </li>
+    {% endfor %}
+</ul>
+<a href="{% url 'personNew' %}">Adicionar</a>
+
+</body>
+</html>
